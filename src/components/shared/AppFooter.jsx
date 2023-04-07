@@ -1,37 +1,31 @@
 import {
 	FiGithub,
-	FiTwitter,
 	FiLinkedin,
 	FiGlobe,
-	FiYoutube,
 } from 'react-icons/fi';
+import { AiOutlineMedium } from 'react-icons/ai';
 import AppFooterCopyright from './AppFooterCopyright';
 
 const socialLinks = [
 	{
 		id: 1,
 		icon: <FiGlobe />,
-		url: 'https://www.stoman.me/',
+		url: 'https://www.andyrum.com/',
 	},
 	{
 		id: 2,
 		icon: <FiGithub />,
-		url: 'https://github.com/realstoman',
+		url: 'https://github.com/PoOwAa/',
 	},
 	{
 		id: 3,
-		icon: <FiTwitter />,
-		url: 'https://twitter.com/realstoman',
+		icon: <FiLinkedin />,
+		url: 'https://www.linkedin.com/in/andyrum/',
 	},
 	{
 		id: 4,
-		icon: <FiLinkedin />,
-		url: 'https://www.linkedin.com/in/realstoman',
-	},
-	{
-		id: 5,
-		icon: <FiYoutube />,
-		url: 'https://www.youtube.com/c/realstoman',
+		icon: <AiOutlineMedium />,
+		url: 'https://andyrum.medium.com/',
 	},
 ];
 

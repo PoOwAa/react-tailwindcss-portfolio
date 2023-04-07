@@ -1478,3 +1478,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2.25rem;
   }
 }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

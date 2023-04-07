@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import SingleProjectContext from '../../context/SingleProjectContext';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const ProjectInfo = () => {
 	const { singleProjectData } = useContext(SingleProjectContext);
@@ -21,18 +23,18 @@ const ProjectInfo = () => {
 										key={info.id}
 									>
 										<span>{info.title}: </span>
-										<a
-											href="https://stoman.me"
-											className={
-												info.title === 'Website' ||
-												info.title === 'Phone'
-													? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
-													: ''
-											}
+										{info.title !== 'Website' ? (
+											<span>
+												{info.details}
+											</span>) : (<a
+											href={info.details}
+											target="__blank"
+											className='hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
 											aria-label="Project Website and Phone"
 										>
 											{info.details}
-										</a>
+										</a>)}
+										
 									</li>
 								);
 							}
@@ -53,40 +55,51 @@ const ProjectInfo = () => {
 				{/* Single project technologies */}
 				<div className="mb-7">
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-						{singleProjectData.ProjectInfo.Technologies[0].title}
+						{singleProjectData.ProjectInfo.Technologies.title}
 					</p>
-					<p className="font-general-regular text-primary-dark dark:text-ternary-light">
-						{singleProjectData.ProjectInfo.Technologies[0].techs.join(
-							', '
-						)}
-					</p>
+					<div className="flex flex-wrap items-center gap-3 mt-5 text-primary-dark dark:text-ternary-light">
+						<Tooltip id="tech-tooltip"/>
+						{singleProjectData.ProjectInfo.Technologies.techs.map((tech) => 
+							<div
+								data-tooltip-content={tech.tooltip}
+								data-tooltip-id="tech-tooltip"
+								className="text-lg lg:text-2xl"
+								key={`tech-icon-${tech.tooltip}`}
+							>
+								{tech.icon}
+							</div>
+      			)}
+    			</div>
 				</div>
 
 				{/* Single project social sharing */}
-				<div>
-					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-						{singleProjectData.ProjectInfo.SocialSharingHeading}
-					</p>
-					<div className="flex items-center gap-3 mt-5">
-						{singleProjectData.ProjectInfo.SocialSharing.map(
-							(social) => {
-								return (
-									<a
-										key={social.id}
-										href={social.url}
-										target="__blank"
-										aria-label="Share Project"
-										className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-									>
-										<span className="text-lg lg:text-2xl">
-											{social.icon}
-										</span>
-									</a>
-								);
-							}
-						)}
+				{/* Render only if SocialSharingHeading and SocialSharing has a value */}
+				{singleProjectData.ProjectInfo.SocialSharingHeading && singleProjectData.ProjectInfo.SocialSharing && (
+					<div>
+						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
+							{singleProjectData.ProjectInfo.SocialSharingHeading}
+						</p>
+						<div className="flex items-center gap-3 mt-5">
+							{singleProjectData.ProjectInfo.SocialSharing.map(
+								(social) => {
+									return (
+										<a
+											key={social.id}
+											href={social.url}
+											target="__blank"
+											aria-label="Share Project"
+											className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
+										>
+											<span className="text-lg lg:text-2xl">
+												{social.icon}
+											</span>
+										</a>
+									);
+								}
+							)}
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 
 			{/*  Single project right section */}

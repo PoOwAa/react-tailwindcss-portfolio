@@ -6,6 +6,8 @@ import AppFooter from './components/shared/AppFooter';
 import AppHeader from './components/shared/AppHeader';
 import './css/App.css';
 import UseScrollToTop from './hooks/useScrollToTop';
+import { projectsData } from './data/projects';
+import NotFoundPage from './pages/NotFound';
 
 const About = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
@@ -30,8 +32,21 @@ function App() {
 								element={<ProjectSingle />}
 							/>
 
+							{ 
+								projectsData.map((project) => {
+									return (
+										<Route
+											key={project.id}
+											path={`projects/${project.slug}`}
+											element={<ProjectSingle project={project}/>}
+										/>
+									)
+								})
+							}
+
 							<Route path="about" element={<About />} />
 							<Route path="contact" element={<Contact />} />
+							<Route path="*" element={<NotFoundPage />} />
 						</Routes>
 					</Suspense>
 					<AppFooter />

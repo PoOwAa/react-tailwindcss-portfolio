@@ -5,7 +5,7 @@ import ProjectRelatedProjects from '../components/projects/ProjectRelatedProject
 import { SingleProjectProvider } from '../context/SingleProjectContext';
 import { motion } from 'framer-motion';
 
-const ProjectSingle = () => {
+const ProjectSingle = ({project}) => {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -17,7 +17,7 @@ const ProjectSingle = () => {
 			}}
 			className="container mx-auto mt-5 sm:mt-10"
 		>
-			<SingleProjectProvider>
+			<SingleProjectProvider projectDetails={project.details} >
 				<ProjectHeader />
 				<ProjectGallery />
 				<ProjectInfo />
