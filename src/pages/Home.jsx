@@ -3,10 +3,16 @@ import AppBanner from '../components/shared/AppBanner';
 import ProjectsGrid from '../components/projects/ProjectsGrid';
 import { ProjectsRandomContext, ProjectsRandomProvider } from '../context/ProjectsRandomContext';
 import Button from '../components/reusable/Button';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 	return (
 		<div className="container mx-auto">
+			<Helmet>
+				<title>AndyRum</title>
+				<meta name="description" content="AndyRum is a web developer from Hungary. Backend, blockchain, web3 projects are welcome!" />
+				<meta name="keywords" content="web developer, blockchain, web3, backend, javascript, typescript, nodejs, solidity, ethereum, smart contracts" />
+			</Helmet>
 			<AppBanner></AppBanner>
 
 			<ProjectsRandomProvider>

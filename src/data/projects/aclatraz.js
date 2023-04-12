@@ -6,6 +6,7 @@ export const projectAclatraz = {
     title: 'ACLATRAZ - A simple dependency free ACL library for Node.js',
     publishDate: 'Mar 3, 2021',
     tags: 'Backend, Node.js, Typescript, NPM, Open Source, Github, ACL',
+    description: `ACLatraz is a dependency-free access control library for Node.js, generating short and efficient permission tokens without external resources. It's written in TypeScript and supports easy usage and code stability.`,
   },
   ProjectImages: [
     {

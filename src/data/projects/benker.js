@@ -6,7 +6,9 @@ export const projectBenker = {
   ProjectHeader: {
     title: 'Benker - control of your own money',
     publishDate: '2022',
-    tags: 'Blockchain, Node.JS, TypeScript',
+    tags: 'Blockchain, Node.JS, TypeScript, 2-phase commit, ZK proof',
+    description:
+      'As a developer at Benker.io, I designed and implemented their hybrid blockchain system with microservices, 2 phase commit transactions, message queues, and a ZK proof algorithm. The challenge was to achieve a high transaction rate, and we solved it with the implementation of a unique consensus algorithm.',
   },
   ProjectImages: [
     {

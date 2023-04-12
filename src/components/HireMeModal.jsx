@@ -1,15 +1,33 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
-
-const selectOptions = [
-	'API',
-	'Backend Development',
-	'System Design',
-	'Blockchain',
-];
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-hot-toast';
+import { ReactComponent as Loader } from '../images/loading.svg';
+import FormInput from './reusable/FormInput';
 
 const HireMeModal = ({ onClose, onRequest }) => {
+	const modalContactForm = useRef();
+	const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+		setLoading(true);
+
+    emailjs.sendForm('service_kpoz3tn', 'template_0awkgx1', modalContactForm.current, 'nEGeej-CM0TI9JdXh')
+      .then((result) => {
+          toast.success('Message sent successfully! 🎉')
+					setLoading(false);
+          console.log(result.text);
+					e.target.reset();
+      }, (error) => {
+          toast.error('Something went wrong! 😢')
+					setLoading(false);
+          console.log(error.text);
+      });
+  };
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -37,98 +55,60 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						</div>
 						<div className="modal-body p-5 w-full h-full">
 							<form
-								onSubmit={(e) => {
-									e.preventDefault();
-								}}
+								name="modal-contact-form"
+								ref={modalContactForm}
+								onSubmit={sendEmail}
 								className="max-w-xl m-4 text-left"
 							>
-								<div className="">
-									<input
-										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-										id="name"
-										name="name"
-										type="text"
-										required=""
-										placeholder="Name"
-										aria-label="Name"
-									/>
-								</div>
+								<FormInput
+									inputLabel="Full Name"
+									labelFor="name"
+									inputType="text"
+									inputId="name"
+									inputName="name"
+									placeholderText="Your Name"
+									ariaLabelName="Name"
+								/>
+								<FormInput
+									inputLabel="Email"
+									labelFor="email"
+									inputType="email"
+									inputId="email"
+									inputName="email"
+									placeholderText="Your email"
+									ariaLabelName="Email"
+								/>
+								<FormInput
+									inputLabel="Subject"
+									labelFor="subject"
+									inputType="text"
+									inputId="subject"
+									inputName="subject"
+									placeholderText="Subject"
+									ariaLabelName="Subject"
+								/>
 								<div className="mt-6">
-									<input
-										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-										id="email"
-										name="email"
-										type="text"
-										required=""
-										placeholder="Email"
-										aria-label="Email"
-									/>
-								</div>
-								<div className="mt-6">
-									<select
-										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-										id="subject"
-										name="subject"
-										type="text"
-										required=""
-										aria-label="Project Category"
+									<label
+										className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+										htmlFor="message"
 									>
-										{selectOptions.map((option) => (
-											<option
-												className="text-normal sm:text-md"
-												key={option}
-											>
-												{option}
-											</option>
-										))}
-									</select>
-								</div>
-
-								<div className="mt-6">
+										Message
+									</label>
 									<textarea
-										className="w-full px-5 py-2 border dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+										className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 										id="message"
 										name="message"
 										cols="14"
 										rows="6"
-										aria-label="Details"
+										aria-label="Message"
 										placeholder="Project description"
 									></textarea>
 								</div>
 
-								<div className="mt-6 pb-4 sm:pb-1">
-									<span
-										onClick={onClose}
-										type="submit"
-										className="px-4
-											sm:px-6
-											py-2
-											sm:py-2.5
-											text-white
-											bg-indigo-500
-											hover:bg-indigo-600
-											rounded-md
-											focus:ring-1 focus:ring-indigo-900 duration-500"
-										aria-label="Submit Request"
-									>
-										<Button title="Send Request" />
-									</span>
+								<div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
+									<Button title={loading ? <Loader className="h-5 w-5"/> : "Send Message"} type="submit" aria-label="Send Message" disabled={loading} />
 								</div>
 							</form>
-						</div>
-						<div className="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right">
-							<span
-								onClick={onClose}
-								type="button"
-								className="px-4
-									sm:px-6
-									py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light
-									rounded-md
-									focus:ring-1 focus:ring-indigo-900 duration-500"
-								aria-label="Close Modal"
-							>
-								<Button title="Close" />
-							</span>
 						</div>
 					</div>
 				</div>

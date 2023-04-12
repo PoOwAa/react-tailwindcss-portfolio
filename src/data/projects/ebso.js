@@ -8,7 +8,9 @@ export const projectEBSO = {
   ProjectHeader: {
     title: 'EBlockStock',
     publishDate: 'Sep 21, 2021',
-    tags: 'Blockchain, crypto currency, Ethereum',
+    tags: 'Blockchain, crypto currency, Ethereum, hardhat, solidity, typescript, nodejs, jest',
+    description:
+      'Developed and deployed eBSO cryptocurrency on Ethereum blockchain, managing migration and audits, and listing on multiple exchanges.',
   },
   ProjectImages: [
     {

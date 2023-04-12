@@ -8,7 +8,8 @@ export const projectNatrix = {
   ProjectHeader: {
     title: 'Natrix - next generation hybrid blockchain',
     publishDate: 'Q4 2021',
-    tags: 'Blockchain',
+    tags: 'Blockchain, crypto currency, Ethereum, typescript, nodejs',
+    description: `Natrix is a hybrid blockchain which combines the best features of public and private blockchains.`,
   },
   ProjectImages: [
     {

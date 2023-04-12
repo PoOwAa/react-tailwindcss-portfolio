@@ -7,6 +7,8 @@ export const projectAndyBot = {
     title: 'AndyBot - Just another Discord bot',
     publishDate: '2023',
     tags: 'Backend, Node.js, Typescript, Github, Discord, Discord.js, ffmpeg,',
+    description:
+      'Developed AndyBot, a TypeScript-based Discord bot that streams and plays music from YouTube in real-time with additional features for D&D dice rolling, role management, and message clearing.',
   },
   ProjectImages: [
     {

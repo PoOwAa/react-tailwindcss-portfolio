@@ -3,10 +3,16 @@ import AboutCounter from '../components/about/AboutCounter';
 import AboutClients from '../components/about/AboutClients';
 import { AboutMeProvider } from '../context/AboutMeContext';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
 	return (
 		<AboutMeProvider>
+			<Helmet>
+				<title>About Me</title>
+				<meta name="description" content="AndyRum bio page. Know me more before hire!" />
+				<meta name="keywords" content="web developer, blockchain, web3, backend, javascript, typescript, nodejs, solidity, ethereum, smart contracts" />
+			</Helmet>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}

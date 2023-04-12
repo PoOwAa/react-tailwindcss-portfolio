@@ -7,6 +7,7 @@ export const projectMindspa = {
     title: 'Mindspa - mental health app',
     publishDate: '2021',
     tags: 'Backend',
+    description: `Improved MindSPA app UX with multilingual support & dedicated coupon site, resulting in more users & continued workshops.`,
   },
   ProjectImages: [
     {

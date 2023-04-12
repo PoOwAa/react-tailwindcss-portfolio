@@ -1,12 +1,18 @@
 import { useContext } from 'react';
 import { FiClock, FiTag } from 'react-icons/fi';
 import SingleProjectContext from '../../context/SingleProjectContext';
+import { Helmet } from 'react-helmet';
 
 const ProjectSingleHeader = () => {
 	const { singleProjectData } = useContext(SingleProjectContext);
 
 	return (
 		<div>
+			<Helmet>
+				<title>{singleProjectData.ProjectHeader.title}</title>
+				<meta name="description" content={singleProjectData.ProjectHeader.description} />
+				<meta name="keywords" content={singleProjectData.ProjectHeader.tags} />
+			</Helmet>
 			<p className="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7">
 				{singleProjectData.ProjectHeader.title}
 			</p>

@@ -6,6 +6,7 @@ export const projectMmmNetworkSignal = {
     title: 'MMM Network Signal',
     publishDate: 'Dec 28, 2018',
     tags: 'Backend, Node.js, Github',
+    description: `MMM-Network-Signal: A simple solution to measure Raspberry Pi's internet speed. Ping a specific server and display results on Magic Mirror 2.`,
   },
   ProjectImages: [
     {
