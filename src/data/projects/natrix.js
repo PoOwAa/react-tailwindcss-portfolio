@@ -1,4 +1,4 @@
-import { TechIcon } from "../../utils/techToIcon.map";
+import { TechIcon } from '../../utils/techToIcon.map';
 import Natrix from '../../images/natrix.jpeg';
 import EBSO from '../../images/e-blockstock-logo.jpeg';
 import BNOX from '../../images/bnox-logo.jpeg';
@@ -8,7 +8,7 @@ export const projectNatrix = {
   ProjectHeader: {
     title: 'Natrix - next generation hybrid blockchain',
     publishDate: 'Q4 2021',
-    tags: 'Blockchain'
+    tags: 'Blockchain',
   },
   ProjectImages: [
     {
@@ -37,7 +37,8 @@ export const projectNatrix = {
       },
     ],
     ObjectivesHeading: 'Objective',
-    ObjectivesDetails: 'Create a hybrid blockchain which combines the best features of public and private blockchains.',
+    ObjectivesDetails:
+      'Create a hybrid blockchain which combines the best features of public and private blockchains.',
     Technologies: {
       title: 'Tools & Technologies',
       techs: [
@@ -54,14 +55,14 @@ export const projectNatrix = {
         TechIcon.docker,
         TechIcon.prometheus,
         TechIcon.grafana,
-        TechIcon.elasticsearch
+        TechIcon.elasticsearch,
       ],
     },
     ProjectDetailsHeading: 'Challenge',
     ProjectDetails: [
       {
         id: 1,
-        details: 'Create a hybrid blockchain which combines the best features of public and private blockchains.',
+        details: 'Soon...',
       },
     ],
   },
@@ -85,7 +86,7 @@ export const projectNatrix = {
         title: 'BENKER',
         img: BENKER,
         link: '/projects/benker',
-      }
+      },
     ],
-  }
+  },
 };

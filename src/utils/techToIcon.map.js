@@ -1,5 +1,32 @@
-import { SiAmazonaws, SiAngular, SiBitbucket, SiConfluence, SiDocker, SiElasticsearch, SiGithub, SiGitlab, SiGrafana, SiHeroku, SiJest, SiJira, SiKubernetes, SiMongodb, SiMysql, SiNestjs, SiNodedotjs, SiNpm, SiPostgresql, SiPrometheus, SiRabbitmq, SiRedis, SiSolidity, SiSwagger, SiTypescript } from "react-icons/si";
-import { FaHardHat } from "react-icons/fa";
+import {
+  SiAmazonaws,
+  SiAngular,
+  SiBitbucket,
+  SiConfluence,
+  SiDiscord,
+  SiDocker,
+  SiElasticsearch,
+  SiGithub,
+  SiGitlab,
+  SiGrafana,
+  SiHeroku,
+  SiJest,
+  SiJira,
+  SiKubernetes,
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiNodedotjs,
+  SiNpm,
+  SiPostgresql,
+  SiPrometheus,
+  SiRabbitmq,
+  SiRedis,
+  SiSolidity,
+  SiSwagger,
+  SiTypescript,
+} from 'react-icons/si';
+import { FaHardHat } from 'react-icons/fa';
 
 export const TechIcon = {
   nodejs: {
@@ -8,102 +35,106 @@ export const TechIcon = {
   },
   typescript: {
     tooltip: 'TypeScript',
-    icon: <SiTypescript />
+    icon: <SiTypescript />,
   },
   redis: {
     tooltip: 'Redis',
-    icon: <SiRedis />
+    icon: <SiRedis />,
   },
   mysql: {
     tooltip: 'MySQL',
-    icon: <SiMysql />
+    icon: <SiMysql />,
   },
   postgres: {
     tooltip: 'PostgreSQL',
-    icon: <SiPostgresql />
+    icon: <SiPostgresql />,
   },
   rabbitmq: {
     tooltip: 'RabbitMQ',
-    icon: <SiRabbitmq />
+    icon: <SiRabbitmq />,
   },
   elasticsearch: {
     tooltip: 'Elasticsearch',
-    icon: <SiElasticsearch />
+    icon: <SiElasticsearch />,
   },
   solidity: {
     tooltip: 'Solidity',
-    icon: <SiSolidity />
+    icon: <SiSolidity />,
   },
   docker: {
     tooltip: 'Docker',
-    icon: <SiDocker />
+    icon: <SiDocker />,
   },
   nestjs: {
     tooltip: 'NestJS',
-    icon: <SiNestjs />
+    icon: <SiNestjs />,
   },
   mongo: {
     tooltip: 'MongoDB',
-    icon: <SiMongodb />
+    icon: <SiMongodb />,
   },
   swagger: {
     tooltip: 'Swagger',
-    icon: <SiSwagger />
+    icon: <SiSwagger />,
   },
   bitbucket: {
     tooltip: 'Bitbucket',
-    icon: <SiBitbucket />
+    icon: <SiBitbucket />,
   },
   jest: {
     tooltip: 'Jest',
-    icon: <SiJest />
+    icon: <SiJest />,
   },
   gitlab: {
     tooltip: 'Gitlab',
-    icon: <SiGitlab />
+    icon: <SiGitlab />,
   },
   github: {
     tooltip: 'Github',
-    icon: <SiGithub />
+    icon: <SiGithub />,
   },
   hardhat: {
     tooltip: 'Hardhat',
-    icon: <FaHardHat />
+    icon: <FaHardHat />,
   },
   jira: {
     tooltip: 'Jira',
-    icon: <SiJira />
+    icon: <SiJira />,
   },
   confluence: {
     tooltip: 'Confluence',
-    icon: <SiConfluence />
+    icon: <SiConfluence />,
   },
   aws: {
     tooltip: 'AWS',
-    icon: <SiAmazonaws />
+    icon: <SiAmazonaws />,
   },
   kubernetes: {
     tooltip: 'Kubernetes',
-    icon: <SiKubernetes />
+    icon: <SiKubernetes />,
   },
   prometheus: {
     tooltip: 'Prometheus',
-    icon: <SiPrometheus />
+    icon: <SiPrometheus />,
   },
   grafana: {
     tooltip: 'Grafana',
-    icon: <SiGrafana />
+    icon: <SiGrafana />,
   },
   heroku: {
     tooltip: 'Heroku',
-    icon: <SiHeroku />
+    icon: <SiHeroku />,
   },
   angular: {
     tooltip: 'Angular',
-    icon: <SiAngular />
+    icon: <SiAngular />,
   },
   npm: {
     tooltip: 'NPM',
-    icon: <SiNpm />
-  }
-}
+    icon: <SiNpm />,
+  },
+  discord: {
+    tooltip: 'Discord',
+    icon: <SiDiscord />,
+  },
+};

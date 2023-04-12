@@ -10,12 +10,12 @@ export const projectEBSO = {
     publishDate: 'Sep 21, 2021',
     tags: 'Blockchain, crypto currency, Ethereum',
   },
-    ProjectImages: [
+  ProjectImages: [
     {
       id: 1,
       title: 'EBlockStock',
       img: EBSO,
-    }
+    },
   ],
   ProjectInfo: {
     ClientHeading: 'About Client',
@@ -35,9 +35,14 @@ export const projectEBSO = {
         title: 'Website',
         details: 'https://blockben.com',
       },
+      {
+        id: 4,
+        title: 'GitHub',
+        details: `https://github.com/blockben-official/ebso`,
+      },
     ],
     ObjectivesHeading: 'Objective',
-    ObjectivesDetails: 'To create a crypto currency on ethereum blockchain',
+    ObjectivesDetails: `The objective of this project was to create a new version of eBSO, a cryptocurrency token running on the Ethereum blockchain, and migrate the current balances of every eBSO holder to the new token address. The purpose of this migration was to change the whitelist policy to blacklist policy and add some extra features to the token. Additionally, the eBSO was planned to be introduced on several trading sites, such as LBank.`,
     Technologies: {
       title: 'Tools & Technologies',
       techs: [
@@ -45,14 +50,18 @@ export const projectEBSO = {
         TechIcon.typescript,
         TechIcon.solidity,
         TechIcon.hardhat,
-        TechIcon.jest
+        TechIcon.jest,
       ],
     },
     ProjectDetailsHeading: 'Challenge',
     ProjectDetails: [
       {
         id: 1,
-        details: 'To create a crypto currency on ethereum blockchain',
+        details: `One of the main challenges of this project was to rewrite the token code in Solidity and TypeScript while ensuring that every part of the code was well tested. Another challenge was to deploy the new eBSO token and migrate the current balances of every eBSO holder to the new token address without any errors or loss of funds. Furthermore, it was necessary to work with an audit company to check the smart contract and ensure its security. Lastly, it was important to introduce the eBSO on several trading sites to increase its market value and adoption.`,
+      },
+      {
+        id: 2,
+        details: `To overcome these challenges, I used Hardhat package to create a local blockchain and write the token in TypeScript, then compile it to Solidity code. This allowed me to test every part of the code before deployment. I managed the planning, deployment and other administrative works, such as putting the token on etherscan, and worked with an audit company to ensure the security of the smart contract. After successful deployment, BlockBen was able to introduce the eBSO on several trading sites, such as LBank, which increased its market value and adoption.`,
       },
     ],
   },
@@ -72,5 +81,5 @@ export const projectEBSO = {
         link: '/projects/bnox',
       },
     ],
-  }
+  },
 };

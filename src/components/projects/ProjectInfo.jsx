@@ -23,7 +23,7 @@ const ProjectInfo = () => {
 										key={info.id}
 									>
 										<span>{info.title}: </span>
-										{info.title !== 'Website' ? (
+										{info.title !== 'Website' && info.title !== 'GitHub' ? (
 											<span>
 												{info.details}
 											</span>) : (<a
